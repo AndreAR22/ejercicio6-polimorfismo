@@ -10,6 +10,10 @@ public class SalesWidget extends Widget implements Interactivo {
     public SalesWidget(String id, String nombre, int memoriaKB, double totalVentas) {
         super(id, nombre, memoriaKB);
 
+        if (totalVentas < 0) {
+            throw new IllegalArgumentException("El total de ventas no puede ser negativo.");
+        }
+
         this.totalVentas = totalVentas;
     }
 

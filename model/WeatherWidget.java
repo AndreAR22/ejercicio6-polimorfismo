@@ -12,6 +12,10 @@ public class WeatherWidget extends Widget implements Interactivo {
     public WeatherWidget(String id, String nombre, int memoriaKB, String ciudad, double temperaturaCelsius) {
         super(id, nombre, memoriaKB);
 
+        if (ciudad == null || ciudad.isBlank()) {
+            throw new IllegalArgumentException("La ciudad es obligatoria.");
+        }
+
         this.ciudad = ciudad;
         this.temperaturaCelsius = temperaturaCelsius;
         this.usarFahrenheit = false;

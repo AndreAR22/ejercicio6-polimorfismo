@@ -11,6 +11,10 @@ public class NoteWidget extends Widget implements Interactivo {
     public NoteWidget(String id, String nombre, int memoriaKB, String... imagenes) {
         super(id, nombre, memoriaKB);
 
+        if (imagenes == null || imagenes.length == 0) {
+            throw new IllegalArgumentException("Debe existir al menos una imagen.");
+        }
+
         this.imagenes = imagenes.clone();
         this.indiceImagen = 0;
     }

@@ -11,6 +11,10 @@ public class AlertWidget extends Widget implements Interactivo {
 
     public AlertWidget(String id, String nombre, int memoriaKB, String mensaje, int prioridad) {
         super(id, nombre, memoriaKB);
+
+        if (mensaje == null || mensaje.isBlank()) {
+            throw new IllegalArgumentException("El mensaje de la alerta es obligatorio.");
+        }
         if (prioridad < 1 || prioridad > 5) {
             throw new IllegalArgumentException("La prioridad debe estar entre 1 y 5.");
         }

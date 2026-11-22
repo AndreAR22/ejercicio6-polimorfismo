@@ -13,7 +13,14 @@ public class TaskWidget extends Widget implements Interactivo {
     public TaskWidget(String id, String nombre, int memoriaKB, String... tareas) {
         super(id, nombre, memoriaKB);
 
+        if (tareas == null || tareas.length == 0) {
+            throw new IllegalArgumentException("Debe existir al menos una tarea.");
+        }
+
         for (String tarea : tareas) {
+            if (tarea == null || tarea.isBlank()) {
+                throw new IllegalArgumentException("Las tareas no pueden estar vacías.");
+            }
             this.tareas.add(tarea);
             this.completadas.add(false);
         }
