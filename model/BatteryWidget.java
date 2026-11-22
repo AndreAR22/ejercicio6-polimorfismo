@@ -10,6 +10,10 @@ public class BatteryWidget extends Widget {
     public BatteryWidget(String id, String nombre, int memoriaKB, int nivel) {
         super(id, nombre, memoriaKB);
 
+        if (nivel < 0 || nivel > 100) {
+            throw new IllegalArgumentException("El nivel de batería debe estar entre 0 y 100.");
+        }
+
         this.nivel = nivel;
     }
 

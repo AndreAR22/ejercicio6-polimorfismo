@@ -10,6 +10,10 @@ public class QuoteWidget extends Widget {
 
     public QuoteWidget(String id, String nombre, int memoriaKB, String frase, String autor) {
         super(id, nombre, memoriaKB);
+
+        if (frase == null || frase.isBlank()) {
+            throw new IllegalArgumentException("La frase es obligatoria.");
+        }
         if (autor == null || autor.isBlank()) {
             throw new IllegalArgumentException("El autor es obligatorio.");
         }
