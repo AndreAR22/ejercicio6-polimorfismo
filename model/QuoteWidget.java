@@ -1,7 +1,8 @@
 package model;
 
+import view.QuoteWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class QuoteWidget extends Widget {
 
@@ -34,6 +35,6 @@ public class QuoteWidget extends Widget {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new QuoteWidgetView(this).obtenerPanel();
     }
 }

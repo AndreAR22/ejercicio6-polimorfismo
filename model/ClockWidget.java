@@ -1,7 +1,8 @@
 package model;
 
+import view.ClockWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -25,6 +26,6 @@ public class ClockWidget extends Widget {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new ClockWidgetView(this).obtenerPanel();
     }
 }
