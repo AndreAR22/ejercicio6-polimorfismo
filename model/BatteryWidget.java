@@ -1,0 +1,30 @@
+package model;
+
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+
+public class BatteryWidget extends Widget {
+
+    private final int nivel;
+
+    public BatteryWidget(String id, String nombre, int memoriaKB, int nivel) {
+        super(id, nombre, memoriaKB);
+
+        this.nivel = nivel;
+    }
+
+    @Override
+    public String obtenerTexto() {
+        return "Batería: " + nivel + "%";
+    }
+
+    @Override
+    public String obtenerConfiguracion() {
+        return "Nivel fijo: " + nivel + "% | Sin acciones disponibles";
+    }
+
+    @Override
+    public JComponent obtenerVista() {
+        return new JPanel();
+    }
+}
