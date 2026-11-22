@@ -1,7 +1,8 @@
 package model;
 
+import view.WeatherWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class WeatherWidget extends Widget implements Interactivo {
 
@@ -44,6 +45,6 @@ public class WeatherWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new WeatherWidgetView(this).obtenerPanel();
     }
 }
