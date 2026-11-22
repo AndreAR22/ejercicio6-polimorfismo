@@ -7,8 +7,14 @@ public abstract class Widget implements Renderizable {
     private final int memoriaKB;
 
     public Widget(String id, String nombre, int memoriaKB) {
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("El id del widget es obligatorio.");
+        }
         if (nombre == null || nombre.isBlank()) {
             throw new IllegalArgumentException("El nombre del widget es obligatorio.");
+        }
+        if (memoriaKB < 0) {
+            throw new IllegalArgumentException("La memoria debe ser un valor positivo.");
         }
 
         this.id = id;
