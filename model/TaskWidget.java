@@ -1,7 +1,8 @@
 package model;
 
+import view.TaskWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,6 @@ public class TaskWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new TaskWidgetView(this).obtenerPanel();
     }
 }

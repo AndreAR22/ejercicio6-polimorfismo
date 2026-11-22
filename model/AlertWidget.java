@@ -1,7 +1,8 @@
 package model;
 
+import view.AlertWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class AlertWidget extends Widget implements Interactivo {
 
@@ -48,6 +49,6 @@ public class AlertWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new AlertWidgetView(this).obtenerPanel();
     }
 }
