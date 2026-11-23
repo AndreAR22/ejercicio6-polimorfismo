@@ -1,7 +1,8 @@
 package model;
 
+import view.CalendarWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -25,6 +26,6 @@ public class CalendarWidget extends Widget {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new CalendarWidgetView(this).obtenerPanel();
     }
 }

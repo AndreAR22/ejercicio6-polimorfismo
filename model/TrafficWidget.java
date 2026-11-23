@@ -1,7 +1,8 @@
 package model;
 
+import view.TrafficWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class TrafficWidget extends Widget implements Interactivo {
 
@@ -32,6 +33,6 @@ public class TrafficWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new TrafficWidgetView(this).obtenerPanel();
     }
 }

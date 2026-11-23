@@ -1,7 +1,8 @@
 package model;
 
+import view.NoteWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class NoteWidget extends Widget implements Interactivo {
 
@@ -41,6 +42,6 @@ public class NoteWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new NoteWidgetView(this).obtenerPanel();
     }
 }

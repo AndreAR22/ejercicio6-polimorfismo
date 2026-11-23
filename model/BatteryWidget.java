@@ -1,7 +1,8 @@
 package model;
 
+import view.BatteryWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class BatteryWidget extends Widget {
 
@@ -29,6 +30,6 @@ public class BatteryWidget extends Widget {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new BatteryWidgetView(this).obtenerPanel();
     }
 }

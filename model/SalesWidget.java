@@ -1,7 +1,8 @@
 package model;
 
+import view.SalesWidgetView;
+
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 public class SalesWidget extends Widget implements Interactivo {
 
@@ -35,6 +36,6 @@ public class SalesWidget extends Widget implements Interactivo {
 
     @Override
     public JComponent obtenerVista() {
-        return new JPanel();
+        return new SalesWidgetView(this).obtenerPanel();
     }
 }
