@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Dashboard {
@@ -32,6 +33,35 @@ public class Dashboard {
 
     public List<Renderizable> listarWidgets() {
         return widgets;
+    }
+
+    public Renderizable buscar(String texto) {
+        if (texto == null || texto.isBlank()) {
+            return null;
+        }
+
+        String busqueda = texto.trim().toLowerCase();
+
+        for (Renderizable widget : widgets) {
+            if (widget.getId().toLowerCase().contains(busqueda)
+                    || widget.getNombre().toLowerCase().contains(busqueda)) {
+                return widget;
+            }
+        }
+
+        return null;
+    }
+
+    public void ordenarPorMemoria() {
+        Collections.sort(widgets);
+    }
+
+    public String interactuarConWidget(Renderizable widget) {
+        if (!(widget instanceof Interactivo)) {
+            return widget.getNombre() + " es informativo y no soporta interacción.";
+        }
+
+        return ((Interactivo) widget).interactuar();
     }
 
     public int contarInteractivos() {
